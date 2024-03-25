@@ -2,3 +2,5 @@ node_modules/
 
 *.log
 node_modules/.cache/mongodb-memory-server/mongodb-windows-x86_64-6.0.9.zip.downloading
+
+dist/

@@ -1,5 +1,5 @@
 import request from 'supertest';
-import app from '../server';
+import { app } from '../../server';
 
 describe('Authentication API tests', () => {
   it('should register a new user', async () => {
