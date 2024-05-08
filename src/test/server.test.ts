@@ -1,5 +1,5 @@
-import request from 'supertest';
-import { app } from '../../server'; 
+import request from 'supertest'; // Importing 'request' from 'supertest' library
+import { app } from '../../server'; // Importing 'app' from the server file
 
 describe('Server', () => {
   it('should respond with status code 200', async () => {

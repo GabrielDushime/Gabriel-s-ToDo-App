@@ -1,6 +1,6 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
-import mongoose, { ConnectOptions } from 'mongoose'; 
+import mongoose from 'mongoose'; 
 import dotenv from 'dotenv';
 import swaggerUi from 'swagger-ui-express';
 import * as swaggerDocument from './swagger.json';
@@ -12,9 +12,12 @@ dotenv.config();
 
 const app = express();
 const PORT: string | number = process.env.PORT || 3000; 
-const MONGODB_URI = 'mongodb://127.0.0.1:27017/todoApp';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/todoApp';
 
 app.use(bodyParser.json());
+app.get('/', (req: Request, res: Response) => {
+  res.send('Hello, world!');
+});
 
 // MongoDB Connection
 mongoose.connect(MONGODB_URI, {
